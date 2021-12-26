@@ -1,0 +1,2 @@
+progress==1.6
+pytube==11.0.2
