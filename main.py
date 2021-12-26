@@ -17,7 +17,12 @@ def start():
     video_url = input("Enter YouTube URL Here: ")
     yt = YouTube(video_url, on_progress_callback=on_progress)
     video = yt.streams.get_highest_resolution()
+    title = yt.title
+    print(f"\nTitle: {title}")
+    file_size = video.filesize
+    print(f"File size: {file_size // 1048576} M")
     video.download(file_path())
+    print(f"Your video will be saved to: {file_path()}")
 
 
 if __name__ == "__main__":
